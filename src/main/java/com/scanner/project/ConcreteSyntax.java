@@ -13,7 +13,7 @@ package com.scanner.project;
 public class ConcreteSyntax {
 
 	// READ THE COMPLETE FILE FIRST
-	
+
 	// Instance variables
 	public Token token; // current token that is considered from the input stream
 	public TokenStream input; // stream of tokens generated in by the lexical analysis
@@ -47,14 +47,9 @@ public class ConcreteSyntax {
 	public Program program() {
 		// TODO TO BE COMPLETED - Done
 		// Program --> main '{' Declarations Statements '}'
-		//String[] header = { };
+
 		Program p = new Program();
-		
-		// for (int i = 0; i < header.length; i++){
-		// 	// bypass " main { "
-		// 	match(header[i]);
-		// 	// add the required code
-		// }
+
 		match("main");
 		match("{");
 		p.decpart = declarations();
@@ -209,13 +204,14 @@ public class ConcreteSyntax {
 		Binary b;
 		Expression e;
 		e = addition();
-		// TODO TO BE CHECKED AND COMPLETED. Do we have all the operators? - Done 
-		while (token.getValue().equals("<") 
+		// TODO TO BE CHECKED AND COMPLETED. Do we have all the operators? - Done
+
+		while (token.getValue().equals("<")
 				|| token.getValue().equals("<=")
+				|| token.getValue().equals(">")
 				|| token.getValue().equals(">=")
 				|| token.getValue().equals("==")
-				|| token.getValue().equals("!=")
-				|| token.getValue().equals(">")) {
+				|| token.getValue().equals("!=")) {
 			b = new Binary();
 			// TODO TO BE COMPLETED - Done
 			b.op = new Operator(token.getValue());
@@ -286,7 +282,7 @@ public class ConcreteSyntax {
 		} else if (token.getType().equals("Literal")) {
 			Value v = null;
 			if (isInteger(token.getValue()))
-			v = new Value(Integer.parseInt(token.getValue()));
+				v = new Value(Integer.parseInt(token.getValue()));
 			else if (token.getValue().equals("True"))
 				v = new Value(true);
 			else if (token.getValue().equals("False"))
@@ -313,7 +309,7 @@ public class ConcreteSyntax {
 		c.test = expression();
 		match(")");
 		c.thenbranch = statement();
-		if(token.getValue().equals("else")){
+		if (token.getValue().equals("else")) {
 			token = input.nextToken();
 			c.elsebranch = statement();
 		}
