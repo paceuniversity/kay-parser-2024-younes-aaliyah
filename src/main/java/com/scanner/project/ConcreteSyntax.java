@@ -47,14 +47,14 @@ public class ConcreteSyntax {
 	public Program program() {
 		// TODO TO BE COMPLETED - Done
 		// Program --> main '{' Declarations Statements '}'
-		String[] header = { };
+		//String[] header = { };
 		Program p = new Program();
 		
-		for (int i = 0; i < header.length; i++){
-			// bypass " main { "
-			match(header[i]);
-			// add the required code
-		}
+		// for (int i = 0; i < header.length; i++){
+		// 	// bypass " main { "
+		// 	match(header[i]);
+		// 	// add the required code
+		// }
 		match("main");
 		match("{");
 		p.decpart = declarations();
