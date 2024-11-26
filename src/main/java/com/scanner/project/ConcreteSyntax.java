@@ -160,6 +160,7 @@ public class ConcreteSyntax {
 			// TODO TO BE COMPLETED - Done
 			a.target = new Variable();
 			a.target.id = token.getValue();
+			token = input.nextToken();
 			match(":=");
 			a.source = expression();
 		} else
