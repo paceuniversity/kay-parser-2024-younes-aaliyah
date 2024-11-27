@@ -276,7 +276,7 @@ public class TokenStream {
 		// TODO TO BE COMPLETED - Done
 		return c == '+' || c == '-' || c == '*' || c == '/' ||
 				c == '<' || c == '>' || c == '=' || c == '!' ||
-				c == '&' || c == ':' || c == ':' || c == '|';
+				c == '&' || c == ':' || c == '|';
 	}
 
 	private boolean isLetter(char c) {
@@ -285,7 +285,7 @@ public class TokenStream {
 
 	private boolean isDigit(char c) {
 		// TODO TO BE COMPLETED - Done
-		return c >= '0' && c <= '9';
+		return (c >= '0' && c <= '9');
 	}
 
 	public boolean isEndofFile() {
