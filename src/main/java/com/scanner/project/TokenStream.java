@@ -152,7 +152,7 @@ public class TokenStream {
 					nextChar = readChar();
 					if (nextChar == '=') {
 						t.setValue(t.getValue() + nextChar);
-						nextChar = readChar();
+						//nextChar = readChar();
 					} else {
 						t.setType("Other");
 					}
